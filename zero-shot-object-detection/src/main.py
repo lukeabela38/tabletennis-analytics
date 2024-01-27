@@ -6,8 +6,7 @@ def main():
 
     obj = ObjectDetection()
     results = obj.classify(image=image)
-    print(results)
-    obj.draw(results=results, image=image, save_path="images/outputs/behind.jpeg")
+    #obj.draw(results=results, image=image, save_path="images/outputs/behind.jpeg")
 
 
 if __name__ == "__main__":

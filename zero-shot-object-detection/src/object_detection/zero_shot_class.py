@@ -48,6 +48,10 @@ class ObjectDetection():
 
         return results
 
+    @staticmethod 
+    def logging(results):
+        return results
+
     @staticmethod
     def draw(results, image, save_path="images/outputs/test.jpg"):
 

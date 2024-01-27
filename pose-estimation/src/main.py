@@ -1,4 +1,4 @@
-import cv2
+import cv2, json
 import numpy as np
 import mediapipe as mp
 from mediapipe.tasks import python
@@ -7,7 +7,12 @@ from pose_estimation.processing import draw_landmarks_on_image
 from pose_estimation.config import PoseEstimationConfig
 
 model = PoseEstimationConfig.MODEL.value
-base_options = python.BaseOptions(model_asset_path=f'/src/pose_estimation/models/{model}')
+base_options = python.BaseOptions(model_asset_path=f'/src/pose_estimation/artifacts/models/{model}')
+
+MAPPINGS_PATH = "/src/pose_estimation/artifacts/models/mappings.json"
+with open(MAPPINGS_PATH) as jf: 
+    model_mappings = json.load(jf)
+
 options = vision.PoseLandmarkerOptions(
     base_options=base_options,
     output_segmentation_masks=PoseEstimationConfig.SEGMENTATION_MASKS.value)
@@ -17,7 +22,9 @@ detector = vision.PoseLandmarker.create_from_options(options)
 image = mp.Image.create_from_file("pose_estimation/images/inputs/topview.jpeg")
 detection_result = detector.detect(image)
 
-print(detection_result)
+results_to_print = (detection_result.pose_landmarks[0])
+for i in range(len(results_to_print)):
+    print(f"Category: {model_mappings[str(i)]}, X: {results_to_print[i].x}, Y: {results_to_print[i].y}, Z: {results_to_print[i].z}, Visibility: {results_to_print[i].visibility}, Presence: {results_to_print[i].presence}")
 
 # STEP 5: Process the detection result. In this case, visualize it.
 if PoseEstimationConfig.ANNOTATION.value:
