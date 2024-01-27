@@ -6,21 +6,28 @@ from mediapipe.tasks.python import vision
 from pose_estimation.processing import draw_landmarks_on_image
 from pose_estimation.config import PoseEstimationConfig
 
+### SETUP ###
 model = PoseEstimationConfig.MODEL.value
-base_options = python.BaseOptions(model_asset_path=f'/src/pose_estimation/artifacts/models/{model}')
 
-MAPPINGS_PATH = "/src/pose_estimation/artifacts/models/mappings.json"
-with open(MAPPINGS_PATH) as jf: 
-    model_mappings = json.load(jf)
+base_options = python.BaseOptions(
+    model_asset_path=model
+    )
+
+VisionRunningMode = mp.tasks.vision.RunningMode
 
 options = vision.PoseLandmarkerOptions(
     base_options=base_options,
+    running_mode=VisionRunningMode.IMAGE,
     output_segmentation_masks=PoseEstimationConfig.SEGMENTATION_MASKS.value)
 detector = vision.PoseLandmarker.create_from_options(options)
 
-# STEP 3: Load the input image & STEP 4: Detect pose landmarks from the input image
+### END OF SETUP ###
+
 image = mp.Image.create_from_file("pose_estimation/images/inputs/topview.jpeg")
 detection_result = detector.detect(image)
+
+with open(PoseEstimationConfig.MAPPINGS.value) as file: 
+    model_mappings = json.load(file)
 
 results_to_print = (detection_result.pose_landmarks[0])
 for i in range(len(results_to_print)):
