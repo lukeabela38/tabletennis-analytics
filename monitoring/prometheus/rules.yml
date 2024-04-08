@@ -1,6 +1,11 @@
 groups:
- - name: example
+ - name: CheckInstanceDown
    rules:
    - alert: InstanceDown
      expr: up == 0
+     for: 1m
+ - name: CheckInstanceUp
+   rules:
+   - alert: InstanceUp
+     expr: up != 0
      for: 1m
