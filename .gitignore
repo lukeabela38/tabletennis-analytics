@@ -3,4 +3,4 @@ zero-shot-object-detection/src/object_detection/__pycache__
 pose-estimation/src/pose_estimation/__pycache__
 pose-estimation/src/pose_estimation/process/__pycache__
 monitoring/web-app/*/*.json
-monitoring/*-data
+monitoring/*data
