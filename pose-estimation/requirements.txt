@@ -1,0 +1,7 @@
+mediapipe==0.10.9
+opencv-python
+numpy
+redis
+fastapi
+uvicorn[standard]
+prometheus-client
