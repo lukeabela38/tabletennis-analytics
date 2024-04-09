@@ -16,7 +16,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "cdhxwg4a0d4hsd"
+          "uid": "${prometheus}"
         },
         "enable": true,
         "expr": "sum(changes(prometheus_config_last_reload_success_timestamp_seconds{instance=~\"$instance\"}[10m])) by (instance)",
@@ -31,7 +31,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "cdhxwg4a0d4hsd"
+          "uid": "${prometheus}"
         },
         "enable": true,
         "expr": "count(sum(up{instance=\"$instance\"}) by (instance) < 1)",
@@ -57,7 +57,7 @@
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "cdhxwg4a0d4hsd"
+        "uid": "${prometheus}"
       },
       "gridPos": {
         "h": 1,
@@ -71,7 +71,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "cdhxwg4a0d4hsd"
+            "uid": "${prometheus}"
           },
           "refId": "A"
         }
@@ -418,7 +418,7 @@
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "cdhxwg4a0d4hsd"
+        "uid": "${prometheus}"
       },
       "gridPos": {
         "h": 1,
@@ -432,7 +432,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "cdhxwg4a0d4hsd"
+            "uid": "${prometheus}"
           },
           "refId": "A"
         }
@@ -864,7 +864,7 @@
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "cdhxwg4a0d4hsd"
+        "uid": "${prometheus}"
       },
       "gridPos": {
         "h": 1,
@@ -878,7 +878,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "cdhxwg4a0d4hsd"
+            "uid": "${prometheus}"
           },
           "refId": "A"
         }
@@ -1208,7 +1208,7 @@
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "cdhxwg4a0d4hsd"
+        "uid": "${prometheus}"
       },
       "gridPos": {
         "h": 1,
@@ -1222,7 +1222,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "cdhxwg4a0d4hsd"
+            "uid": "${prometheus}"
           },
           "refId": "A"
         }
@@ -1414,7 +1414,7 @@
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "cdhxwg4a0d4hsd"
+        "uid": "${prometheus}"
       },
       "gridPos": {
         "h": 1,
@@ -1428,7 +1428,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "cdhxwg4a0d4hsd"
+            "uid": "${prometheus}"
           },
           "refId": "A"
         }
@@ -1634,7 +1634,7 @@
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "cdhxwg4a0d4hsd"
+        "uid": "${prometheus}"
       },
       "gridPos": {
         "h": 1,
@@ -1648,7 +1648,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "cdhxwg4a0d4hsd"
+            "uid": "${prometheus}"
           },
           "refId": "A"
         }
@@ -1752,7 +1752,7 @@
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "cdhxwg4a0d4hsd"
+        "uid": "${prometheus}"
       },
       "gridPos": {
         "h": 1,
@@ -1766,7 +1766,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "cdhxwg4a0d4hsd"
+            "uid": "${prometheus}"
           },
           "refId": "A"
         }
@@ -1959,7 +1959,7 @@
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "cdhxwg4a0d4hsd"
+        "uid": "${prometheus}"
       },
       "gridPos": {
         "h": 1,
@@ -1973,7 +1973,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "cdhxwg4a0d4hsd"
+            "uid": "${prometheus}"
           },
           "refId": "A"
         }
@@ -2203,7 +2203,7 @@
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "cdhxwg4a0d4hsd"
+        "uid": "${prometheus}"
       },
       "gridPos": {
         "h": 1,
@@ -2217,7 +2217,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "cdhxwg4a0d4hsd"
+            "uid": "${prometheus}"
           },
           "refId": "A"
         }
@@ -2610,7 +2610,7 @@
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "cdhxwg4a0d4hsd"
+        "uid": "${prometheus}"
       },
       "gridPos": {
         "h": 1,
@@ -2624,7 +2624,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "cdhxwg4a0d4hsd"
+            "uid": "${prometheus}"
           },
           "refId": "A"
         }
@@ -2725,7 +2725,7 @@
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "cdhxwg4a0d4hsd"
+        "uid": "${prometheus}"
       },
       "gridPos": {
         "h": 1,
@@ -2739,7 +2739,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "cdhxwg4a0d4hsd"
+            "uid": "${prometheus}"
           },
           "refId": "A"
         }
@@ -2931,7 +2931,7 @@
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "cdhxwg4a0d4hsd"
+        "uid": "${prometheus}"
       },
       "gridPos": {
         "h": 1,
@@ -2945,7 +2945,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "cdhxwg4a0d4hsd"
+            "uid": "${prometheus}"
           },
           "refId": "A"
         }
@@ -3059,7 +3059,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "cdhxwg4a0d4hsd"
+          "uid": "${prometheus}"
         },
         "definition": "",
         "hide": 0,
@@ -3089,7 +3089,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "cdhxwg4a0d4hsd"
+          "uid": "${prometheus}"
         },
         "definition": "",
         "hide": 0,
