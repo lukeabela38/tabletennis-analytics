@@ -3,6 +3,7 @@ from prometheus_client import CollectorRegistry, Gauge, push_to_gateway
 from prometheus_client.core import GaugeMetricFamily
 from prometheus_client.registry import Collector
 from tqdm import tqdm
+import matplotlib.pylab as plt
 
 class CustomGauge(Collector):
     def __init__(self, body_part, dict):
@@ -27,21 +28,24 @@ class CustomGauge(Collector):
     
 def main():
 
+
+    dict = {}
     for i in tqdm(range(1,230,1)):
+
+        with open(f"harimoto/livestream_{i}.json") as json_file:
+            metrics = json.load(json_file)
+
         registry = CollectorRegistry()
 
         g = Gauge('job_last_success_unixtime', 'Last time a batch job successfully finished', registry=registry)
         g.set_to_current_time()
-
-        with open(f"malong/livestream_{i}.json") as json_file:
-            metrics = json.load(json_file)
     
         for key,value in metrics.items():
             registry.register(CustomGauge(key, value))
 
-        time.sleep(1)
         push_to_gateway('localhost:9091', job='Pose Estimation', registry=registry)
-
+        time.sleep(2)
+    
     return 0
 
 if __name__ == "__main__":

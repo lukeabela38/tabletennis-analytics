@@ -13,4 +13,5 @@ datasources:
     basicAuth: false
     jsonData:
       httpMethod: POST
+      timeInterval: 1s
     readOnly: false
