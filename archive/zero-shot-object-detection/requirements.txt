@@ -1,7 +1,0 @@
-tqdm
-opencv-python
-transformers
-numpy
-scikit-image
-pillow
-tensorflow
